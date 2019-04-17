@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC3244A422672DDB0027FC26 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3244A322672DDB0027FC26 /* Canvas.swift */; };
 		ECEE6334224C7D0400450B46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE6333224C7D0400450B46 /* AppDelegate.swift */; };
 		ECEE6336224C7D0400450B46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE6335224C7D0400450B46 /* ViewController.swift */; };
 		ECEE6339224C7D0400450B46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECEE6337224C7D0400450B46 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC3244A322672DDB0027FC26 /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		ECEE6330224C7D0400450B46 /* SmartScoresV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartScoresV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEE6333224C7D0400450B46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECEE6335224C7D0400450B46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC3244A222672DCA0027FC26 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC3244A322672DDB0027FC26 /* Canvas.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC3244A522672E240027FC26 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ECEE6335224C7D0400450B46 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		ECEE6327224C7D0400450B46 = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +115,9 @@
 		ECEE6332224C7D0400450B46 /* SmartScoresV1 */ = {
 			isa = PBXGroup;
 			children = (
+				EC3244A522672E240027FC26 /* Controllers */,
+				EC3244A222672DCA0027FC26 /* Views */,
 				ECEE6333224C7D0400450B46 /* AppDelegate.swift */,
-				ECEE6335224C7D0400450B46 /* ViewController.swift */,
 				ECEE6337224C7D0400450B46 /* Main.storyboard */,
 				ECEE633A224C7D0600450B46 /* Assets.xcassets */,
 				ECEE633C224C7D0700450B46 /* LaunchScreen.storyboard */,
@@ -258,6 +277,7 @@
 			files = (
 				ECEE6336224C7D0400450B46 /* ViewController.swift in Sources */,
 				ECEE6334224C7D0400450B46 /* AppDelegate.swift in Sources */,
+				EC3244A422672DDB0027FC26 /* Canvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

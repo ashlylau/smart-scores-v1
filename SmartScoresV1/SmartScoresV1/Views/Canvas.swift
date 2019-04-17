@@ -1,28 +1,33 @@
 //
-//  ViewController.swift
+//  Canvas.swift
 //  SmartScoresV1
 //
-//  Created by Ashly Lau on 28/3/19.
+//  Created by Ashly Lau on 17/4/19.
 //  Copyright © 2019 Ashly Lau. All rights reserved.
 //
 
 import UIKit
 
 class Canvas: UIView {
+    
+    var lines = [[CGPoint]]()
+    
+    func undo() {
+        _ = lines.popLast()
+        setNeedsDisplay()
+    }
+    
+    func clear() {
+        lines.removeAll()
+        setNeedsDisplay()
+    }
+    
     override func draw(_ rect: CGRect) {
         //custom drawing
         super.draw(rect)
         
         guard let context = UIGraphicsGetCurrentContext() else
-            { return }
-        
-        // here are my lines
-        // dummy data
-//        let startPoint = CGPoint(x: 0, y: 0)
-//        let endPoint = CGPoint(x: 100, y: 100)
-//
-//        context.move(to: startPoint)
-//        context.addLine(to: endPoint)
+        { return }
         
         context.setStrokeColor(UIColor.black.cgColor)
         context.setLineWidth(5)
@@ -37,11 +42,8 @@ class Canvas: UIView {
                 }
             }
         }
-        
         context.strokePath()
     }
-    
-    var lines = [[CGPoint]]()
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         lines.append([CGPoint]())
@@ -52,8 +54,6 @@ class Canvas: UIView {
         guard let point = touches.first?.location(in: nil) else {
             return
         }
-//        print(point)
-        
         guard var lastLine = lines.popLast() else { return }
         lastLine.append(point)
         
@@ -62,17 +62,3 @@ class Canvas: UIView {
         setNeedsDisplay()
     }
 }
-
-class ViewController: UIViewController {
-    
-    let canvas = Canvas()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.addSubview(canvas)
-        canvas.backgroundColor = .white
-        canvas.frame = view.frame
-    }
-}
-
